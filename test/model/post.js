@@ -1,12 +1,13 @@
-var mongoose = require('mongoose')
-  , Schema   = mongoose.Schema
-  , history  = require('../../lib/mongoose-history');
-  
-var PostSchema = new Schema({
-    updatedFor: String
-  , title: String
-  , message: String
+const mongoose = require("mongoose");
+
+const {Schema} = mongoose;
+const history = require("../../lib/mongoose-history");
+
+const PostSchema = new Schema({
+    updatedFor: String,
+    title: String,
+    message: String
 });
 PostSchema.plugin(history);
 
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model("Post", PostSchema);
